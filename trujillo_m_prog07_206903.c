@@ -85,19 +85,25 @@ bool solveMaze(char maze[][size], int x, int y){
   }
   //base case our move isn't valid
   if(!isValid(maze,x,y)){
-    return false;
+outputMaze(maze);     
+return false;
   }
   maze[x][y]=PERSON; 
-  if(solveMaze(maze,x+1,y))
-    return true; 
-  if(solveMaze(maze,x-1,y))
-    return true; 
-  if(solveMaze(maze,x,y+1))
-    return true;
-  if(solveMaze(maze,x,y-1))
-    return true; 
+  bool endFound; 
+  endFound = solveMaze(maze,x+1,y);
+    if (endFound) 
+      return true; 
+  endFound = solveMaze(maze,x-1,y);
+    if (endFound) 
+      return true; 
+  endFound = solveMaze(maze,x,y+1);
+    if (endFound) 
+      return true;
+  endFound = solveMaze(maze,x,y-1);
+    if (endFound)
+      return true; 
   maze[x][y] = BREAD;
-  outputMaze(maze);  
+  
   return false;  
 }
 
