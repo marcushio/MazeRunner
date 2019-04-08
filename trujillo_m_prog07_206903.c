@@ -85,8 +85,6 @@ bool solveMaze(char maze[][size], int x, int y){
   }
   //base case our move isn't valid
   if(!isValid(maze,x,y)){
-    //maze[x][y] = BREAD; 
-    //outputMaze(maze);
     return false;
   }
   maze[x][y]=PERSON; 
