@@ -98,12 +98,13 @@ bool solveMaze(char maze[][size], int x, int y){
     return true;
   if(solveMaze(maze,x,y-1))
     return true; 
-  maze[x][y] = OPEN; 
+  maze[x][y] = BREAD;
+  outputMaze(maze);  
   return false;  
 }
 
 bool isValid(char maze[][size], int x, int y){
-  if(x >= 0 && x < size && y>=0 && y < size && maze[x][y] == OPEN)
+  if(x >= 0 && x < size && y>=0 && y < size && (maze[x][y] == OPEN || maze[x][y] == BREAD))
     return true; 
   return false; 
 }
