@@ -1,3 +1,6 @@
+//Marcus Trujillo
+//CS241: Data Org
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
