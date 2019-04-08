@@ -85,8 +85,7 @@ bool solveMaze(char maze[][size], int x, int y){
   }
   //base case our move isn't valid
   if(!isValid(maze,x,y)){
-outputMaze(maze);     
-return false;
+     return false;
   }
   maze[x][y]=PERSON; 
   bool endFound; 
@@ -103,7 +102,8 @@ return false;
     if (endFound)
       return true; 
   maze[x][y] = BREAD;
-  
+  if(!endFound && x==0, y==0)//we've backtracked to the beginning with no result.
+    outputMaze(maze); 
   return false;  
 }
 
